@@ -1,11 +1,12 @@
 require 'sinatra'
-# require_relative './app/models/elephant'
+require 'active_record'	
+require_relative './app/models/map'
 
-class SinatraApp < Sinatra::Base
+# class SinatraApp < Sinatra::Base
 
-	ActiveRecord::Base.establish_connection(adapter: 'postgresql')
+# 	ActiveRecord::Base.establish_connection(adapter: 'postgresql')
 
 	get '/' do
 		erb :maps_page
 	end
-end
+# end
