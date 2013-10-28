@@ -17,7 +17,8 @@
 </ul>
 
 
-<h3>Release 1</h3>
+<h3>Release 2</h3>
 
 <ul>
 	<li>Working on adding postgresql db...</li>
+</ul>
