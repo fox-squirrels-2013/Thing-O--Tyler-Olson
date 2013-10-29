@@ -35,12 +35,12 @@ body {
 
 #actions {
   float: right;
-  padding: 0px 10px;
+  padding: 30px 10px;
   text-align: right;
 }
 
 #actions a {
-  padding: 0px 10px;
+  padding: 0px 5px;
   display: none;
 }
 
@@ -51,3 +51,7 @@ body {
 #songs_page ul:hover > #actions a{
   display: inline;
 } 
+
+#favorite {
+  background-color: #FFFFCC;
+}

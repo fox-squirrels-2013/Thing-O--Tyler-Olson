@@ -26,6 +26,15 @@ post '/add' do
   redirect '/'
 end
 
+put '/fav/:id' do
+  song = Song.find(params[:id])
+  song.song_name = params[:song_name] unless params[:song_name].empty?
+  song.artist    = params[:artist] unless params[:artist].empty?
+  song.length    = params[:length] unless params[:length].empty?
+  song.genre     = params[:genre] unless params[:genre].empty?
+  song.save
+  redirect '/'
+end
 
 get '/update/:id' do
   @song = Song.find(params[:id])
@@ -34,10 +43,10 @@ end
 
 put '/update/:id' do
   song = Song.find(params[:id])
-  song.song_name = params[:song_name]
-  song.artist    = params[:artist]
-  song.length    = params[:length]
-  song.genre     = params[:genre]
+  song.song_name = params[:song_name] unless params[:song_name].empty?
+  song.artist    = params[:artist] unless params[:artist].empty?
+  song.length    = params[:length] unless params[:length].empty?
+  song.genre     = params[:genre] unless params[:genre].empty?
   song.save
   redirect '/'
 end

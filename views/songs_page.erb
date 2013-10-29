@@ -1,9 +1,11 @@
 <div id="songs_page">
 	<h3>Here are all the songs in the list:</h3>
   <% @all_songs.each do |song| %>
-  <ul>
+  <ul id="<%= 'favorite' if song.favorite %>">
     <li><h4><%= song.song_name %></h4></li>
-    <p id="actions"><a href="/update/<%= song.id %>">Update</a>  <a href="/delete/<%= song.id %>">Delete</a><p>
+    <p id="actions"><a href="/fav/<%= song.id %>">Fav</a>
+                    <a href="/update/<%= song.id %>">Update</a>
+                    <a href="/delete/<%= song.id %>">Delete</a><p>
       <ul>
         <li>Artist: <%= song.artist %></li>
         <li>Length: <%= song.length %></li>
