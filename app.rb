@@ -9,7 +9,7 @@ ActiveRecord::Base.establish_connection(adapter:  'postgresql',
                                         database: 'songs_db')
 
 get '/' do
-  @all_songs = Song.all
+  @all_songs = Song.all :order => :id  
 	erb :songs_page
 end
 
@@ -26,12 +26,10 @@ post '/add' do
   redirect '/'
 end
 
-put '/fav/:id' do
+# need to make as a put request
+get '/fav/:id' do
   song = Song.find(params[:id])
-  song.song_name = params[:song_name] unless params[:song_name].empty?
-  song.artist    = params[:artist] unless params[:artist].empty?
-  song.length    = params[:length] unless params[:length].empty?
-  song.genre     = params[:genre] unless params[:genre].empty?
+  song.favorite = Song.find(params[:id]).favorite ? false : true
   song.save
   redirect '/'
 end
