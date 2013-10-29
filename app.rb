@@ -4,8 +4,8 @@ require_relative './app/models/song'
 require_relative './db/seed'
 
 
-ActiveRecord::Base.establish_connection(adapter:  'postgresql', 
-                                        database: 'songs_db')
+ActiveRecord::Base.establish_connection(adapter:  'postgresql')
+ # ,database: 'songs_db')
 
 get '/' do
   @all_songs = Song.all :order => :id  
