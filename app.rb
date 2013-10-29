@@ -28,9 +28,9 @@ end
 
 # need to make as a put request
 get '/fav/:id' do
-  song = Song.find(params[:id])
-  song.favorite = Song.find(params[:id]).favorite ? false : true
-  song.save
+  s = Song.find(params[:id])
+  s.favorite = !s.favorite
+  s.save
   redirect '/'
 end
 
@@ -40,12 +40,12 @@ get '/update/:id' do
 end
 
 put '/update/:id' do
-  song = Song.find(params[:id])
-  song.song_name = params[:song_name] unless params[:song_name].empty?
-  song.artist    = params[:artist] unless params[:artist].empty?
-  song.length    = params[:length] unless params[:length].empty?
-  song.genre     = params[:genre] unless params[:genre].empty?
-  song.save
+  s = Song.find(params[:id])
+  s.song_name = params[:song_name] unless params[:song_name].empty?
+  s.artist    = params[:artist] unless params[:artist].empty?
+  s.length    = params[:length] unless params[:length].empty?
+  s.genre     = params[:genre] unless params[:genre].empty?
+  s.save
   redirect '/'
 end
 
