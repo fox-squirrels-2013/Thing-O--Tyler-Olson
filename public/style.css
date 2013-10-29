@@ -15,6 +15,11 @@ body {
 	color: #fff;
 }
 
+#footer:hover {
+  background-color: #EBCCF5;  
+  color: #222;
+}
+
 #add_field {
   text-align: right;
   margin-right: 260px;
