@@ -20,5 +20,14 @@
 <h3>Release 2</h3>
 
 <ul>
-	<li>Working on adding postgresql db...</li>
+	<li>Step 1: A user can Create an instance of your thing-o and save it to the database.</li>
+  <li>Step 2: A user can see all the instances of your thing-o.</li>
+  <li>Step 3: A user can update a particular thing-o</li>
+  <li>Step 4: A user can delete a thing-o.</li>
+</ul>
+
+<h3>Release 3</h3>
+
+<ul>
+  <li>Working to refactor into MVC...</li>
 </ul>
