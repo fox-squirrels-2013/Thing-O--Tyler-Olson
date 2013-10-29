@@ -14,3 +14,35 @@ body {
 	background-color: purple;
 	color: #fff;
 }
+
+#add_field {
+  text-align: right;
+  margin-right: 260px;
+}
+
+#add_field ul {
+    list-style-type: none;
+}
+
+#songs_page ul:hover {
+  background-color: #EBCCF5;
+}
+
+#actions {
+  float: right;
+  padding: 0px 10px;
+  text-align: right;
+}
+
+#actions a {
+  padding: 0px 10px;
+  display: none;
+}
+
+#actions a:hover {
+  text-decoration: none;
+}
+
+#songs_page ul:hover > #actions a{
+  display: inline;
+} 
