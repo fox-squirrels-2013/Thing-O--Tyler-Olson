@@ -1,0 +1,15 @@
+  <h3>Do you really want to delete?</h3>
+  <ul>
+    <li><h4><%= @song.song_name %></h4></li>
+    <ul>
+      <li>Artist: <%= @song.artist %></li>
+      <li>Length: <%= @song.length %></li>
+      <li>Genre: <%= @song.genre %></li>
+      <li>ID: <%= @song.id %></li>
+    </ul>
+  </ul>
+
+  <form action="/delete/<%= @song.id %>" method="post">  
+    <input type="hidden" name="_method" value="delete"> 
+    <input type="submit" value="delete">
+  </form> 

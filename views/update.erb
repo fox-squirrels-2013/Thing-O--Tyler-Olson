@@ -1,0 +1,11 @@
+<div id="add_field">
+  <form action="/update/<%= @song.id %>" method="post">  
+    <input type="hidden" name="_method" value="put">  
+    <ul><li>Song name: <input type="text" name="song_name"></li> 
+      <li>Artist: <input type="text" name="artist"></li> 
+      <li>Length: <input type="text" name="length"></li> 
+      <li>Genre: <input type="text" name="genre"></li> 
+      <input type="submit">  
+    </form> 
+  </div>
+

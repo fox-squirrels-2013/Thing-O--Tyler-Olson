@@ -4,11 +4,17 @@ require './app'
 namespace :db do
   desc "create the postgres database"
   task :create do
-    `createdb maps_db`
+    `createdb songs_db`
   end
 
   desc "drop the postgres database"
   task :drop do
-    `dropdb maps_db`
+    `dropdb songs_db`
   end
+
+  desc "seed the postgres database"
+  task :seed do
+    SeedSongs.makesongs!
+  end
+
 end

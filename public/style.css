@@ -14,3 +14,44 @@ body {
 	background-color: purple;
 	color: #fff;
 }
+
+#footer:hover {
+  background-color: #EBCCF5;  
+  color: #222;
+}
+
+#add_field {
+  text-align: right;
+  margin-right: 260px;
+}
+
+#add_field ul {
+    list-style-type: none;
+}
+
+#songs_page ul:hover {
+  background-color: #EBCCF5;
+}
+
+#actions {
+  float: right;
+  padding: 30px 10px;
+  text-align: right;
+}
+
+#actions a {
+  padding: 0px 5px;
+  display: none;
+}
+
+#actions a:hover {
+  text-decoration: none;
+}
+
+#songs_page ul:hover > #actions a{
+  display: inline;
+} 
+
+#favorite {
+  background-color: #FFFFCC;
+}
