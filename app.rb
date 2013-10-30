@@ -6,23 +6,23 @@ require_relative './db/seed'
 
 # ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb1')
 
-ActiveRecord::Base.establish_connection(adapter:  'postgresql')
+ActiveRecord::Base.establish_connection(adapter:  'postgresql', 
+                                        database: 'songs_db')
 
 get '/' do
   @all_songs = Song.all :order => :id  
 	erb :songs_page
 end
 
-get '/add' do
-    erb :add
+get '/new' do
+    erb :new
 end
 
-post '/add' do
+post '/' do
   Song.create!({ song_name: params[:song_name],
                  artist:    params[:artist],
                  length:    params[:length].to_i,
                  genre:     params[:genre] })
-  @all_songs = Song.all
   redirect '/'
 end
 
@@ -34,12 +34,12 @@ get '/fav/:id' do
   redirect '/'
 end
 
-get '/update/:id' do
+get '/:id/edit' do
   @song = Song.find(params[:id])
   erb :update
 end
 
-put '/update/:id' do
+put '/:id' do
   s = Song.find(params[:id])
   s.song_name = params[:song_name] unless params[:song_name].empty?
   s.artist    = params[:artist] unless params[:artist].empty?

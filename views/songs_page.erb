@@ -4,7 +4,7 @@
   <ul id="<%= 'favorite' if song.favorite %>">
     <li><h4><%= song.song_name %></h4></li>
     <p id="actions"><a href="/fav/<%= song.id %>">Fav</a>
-                    <a href="/update/<%= song.id %>">Update</a>
+                    <a href="/<%= song.id %>/edit">Update</a>
                     <a href="/delete/<%= song.id %>">Delete</a><p>
       <ul>
         <li>Artist: <%= song.artist %></li>
