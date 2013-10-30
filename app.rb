@@ -4,18 +4,16 @@ require_relative './app/models/song'
 require_relative './db/seed'
 
 
-# ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb1')
-
 ActiveRecord::Base.establish_connection(adapter:  'postgresql', 
-                                        database: 'songs_db')
+  database: 'songs_db')
 
 get '/' do
   @all_songs = Song.all :order => :id  
-	erb :songs_page
+  erb :songs_page
 end
 
 get '/new' do
-    erb :new
+  erb :new
 end
 
 post '/' do
@@ -26,7 +24,7 @@ post '/' do
   redirect '/'
 end
 
-# need to make as a put request
+# need to make RESTful - as a put request
 get '/fav/:id' do
   s = Song.find(params[:id])
   s.favorite = !s.favorite
@@ -49,13 +47,12 @@ put '/:id' do
   redirect '/'
 end
 
-
-get '/delete/:id' do
+get '/:id/delete' do
   @song = Song.find(params[:id])
   erb :delete
 end
 
-delete '/delete/:id' do
+delete '/:id' do
   Song.find(params[:id]).destroy
   redirect '/'
 end
