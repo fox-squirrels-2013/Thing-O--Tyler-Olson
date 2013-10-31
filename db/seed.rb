@@ -1,6 +1,8 @@
+$LOAD_PATH.unshift(File.expand_path('.'))
+
 require 'faker'
-require_relative '../app.rb'
-require_relative '../app/models/song'
+require './app.rb'
+require './app/models/song'
 
 
 class SeedSongs

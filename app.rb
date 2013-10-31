@@ -1,11 +1,12 @@
+$LOAD_PATH.unshift(File.expand_path('.'))
+
 require 'sinatra'
 require 'active_record'	
-require_relative './app/models/song'
-require_relative './db/seed'
+require './app/models/song'
+require './db/seed'
 
 
-ActiveRecord::Base.establish_connection(adapter:  'postgresql', 
-  database: 'songs_db')
+ActiveRecord::Base.establish_connection( ENV['DATABASE_URL'] || { adapter: 'postgresql', database: 'songs_db'} )
 
 get '/' do
   @all_songs = Song.all :order => :id  
